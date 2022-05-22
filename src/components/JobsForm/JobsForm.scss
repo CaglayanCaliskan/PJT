@@ -1,0 +1,56 @@
+.jobs-form {
+  section {
+    margin: 5px 0;
+  }
+  .form {
+    display: grid;
+    // grid-template-columns: 1fr auto auto;
+    grid-template-columns: 8fr 1fr 1fr;
+    gap: 5px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    label {
+      color: #888;
+    }
+    .jobs-button {
+      justify-content: end;
+    }
+
+    input,
+    select {
+      padding: 10px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 0.3em;
+      border: none;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      border-radius: 0.3em;
+      outline: none;
+      cursor: pointer;
+
+      option {
+        cursor: pointer;
+      }
+
+      #urgent {
+        color: red;
+      }
+      #regular {
+        color: darkorange;
+      }
+      #trivial {
+        color: green;
+      }
+    }
+  }
+}

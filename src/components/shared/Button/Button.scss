@@ -1,0 +1,39 @@
+$btn-color-default: rgba(59, 206, 135, 0.1);
+$btn-color-primary: rgb(59, 106, 135);
+$btn-color-urgent: rgb(233, 26, 26);
+$btn-color-regular: rgb(233, 178, 26);
+$btn-color-trivial: rgb(27, 117, 227);
+
+.btn {
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0.3em;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+.btn.btn-default {
+  background-color: $btn-color-default;
+}
+.btn.btn-primary {
+  background-color: $btn-color-primary;
+}
+.btn.btn-urgent {
+  background-color: $btn-color-urgent;
+}
+.btn.btn-regular {
+  background-color: $btn-color-regular;
+}
+.btn.btn-trivial {
+  background-color: $btn-color-trivial;
+}
+
+.btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
