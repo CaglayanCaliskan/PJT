@@ -1,10 +1,6 @@
-import {useContext} from 'react';
-import JobsContext from '../../context/JobsContext';
 import './Header.scss';
 
 const Header = () => {
-  const gelen = useContext(JobsContext);
-
   return (
     <header>
       <a href='/'>
@@ -13,7 +9,6 @@ const Header = () => {
           alt='logo'
         />
       </a>
-      <button onClick={gelen}>bas</button>
     </header>
   );
 };

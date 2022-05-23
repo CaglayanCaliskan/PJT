@@ -3,6 +3,7 @@ $btn-color-primary: rgb(59, 106, 135);
 $btn-color-urgent: rgb(233, 26, 26);
 $btn-color-regular: rgb(233, 178, 26);
 $btn-color-trivial: rgb(27, 117, 227);
+$btn-color-accept: rgb(30, 136, 13);
 
 .btn {
   color: #fff;
@@ -17,6 +18,13 @@ $btn-color-trivial: rgb(27, 117, 227);
   cursor: pointer;
   transition: 0.2s all ease;
 }
+.btn:disabled {
+  background-color: $btn-color-default;
+  opacity: 0.3;
+  cursor: not-allowed;
+  outline: 1px solid red;
+}
+
 .btn.btn-default {
   background-color: $btn-color-default;
 }
@@ -31,6 +39,9 @@ $btn-color-trivial: rgb(27, 117, 227);
 }
 .btn.btn-trivial {
   background-color: $btn-color-trivial;
+}
+.btn.btn-accept {
+  background-color: $btn-color-accept;
 }
 
 .btn:active {

@@ -30,7 +30,7 @@
       display: grid;
       grid-template-columns: 8fr 2fr 2fr;
       gap: 10px;
-      margin-top: 10px;
+      margin-top: 20px;
       button {
         padding: 2px;
         font-size: 16px;
@@ -41,10 +41,22 @@
       }
       .new-job-priority {
         justify-content: center;
+        button {
+          min-width: 60px;
+        }
       }
       .new-job-action {
         justify-content: space-around;
       }
     }
+  }
+  #urgent {
+    color: red;
+  }
+  #regular {
+    color: darkorange;
+  }
+  #trivial {
+    color: rgb(27, 117, 227);
   }
 }
