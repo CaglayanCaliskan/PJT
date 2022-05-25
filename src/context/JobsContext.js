@@ -72,14 +72,12 @@ export const JobsProvider = ({children}) => {
     setSelectedItem({...selectedItem, jobPriority: selectedItem.newPrio});
     handleOpenEditModal();
     setJobs(
-      ...jobs,
       jobs.map(function (item) {
         if (item.id === selectedItem.id) {
           item.jobPriority = selectedItem.newPrio;
-          //PS!!! Solve this problem
-          return [...item, ...jobs];
+          return item;
         }
-        return [...jobs];
+        return item;
       })
     );
   };
