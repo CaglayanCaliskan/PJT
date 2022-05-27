@@ -55,6 +55,7 @@ const JobsForm = () => {
         jobPriority,
       };
       handleAdd(newJob);
+
       setJobText('');
       setRow(1);
       setJobPriority('');

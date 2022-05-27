@@ -41,14 +41,9 @@
     }
 
     select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      appearance: none;
       border-radius: 0.3em;
       outline: none;
       cursor: pointer;
-
       option {
         cursor: pointer;
       }
