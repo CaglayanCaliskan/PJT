@@ -10,8 +10,7 @@ export const JobsProvider = ({children}) => {
     const data = LocalStorageCheck();
 
     if (data.length > 0) {
-      //Ps: Ill change concat to spread operator
-      setJobs(JobsData.concat(data));
+      setJobs([...JobsData, ...data]);
     } else {
       setJobs(JobsData);
     }
@@ -47,15 +46,24 @@ export const JobsProvider = ({children}) => {
   const handleEditSave = () => {
     handleOpenEditModal();
     setSelectedItem({...selectedItem, jobPriority: selectedItem.newPrio});
+    const data = LocalStorageCheck();
 
     setJobs(
       jobs.map((item) => {
         if (item.id === selectedItem.id) {
           item.jobPriority = selectedItem.newPrio;
         }
+
         return item;
       })
     );
+    //for local update
+    data.forEach((item, index) => {
+      if (item.id === selectedItem.id) {
+        data[index].jobPriority = selectedItem.newPrio;
+      }
+    });
+    localStorage.setItem('jobs', JSON.stringify(data));
   };
 
   //Edit selection func
