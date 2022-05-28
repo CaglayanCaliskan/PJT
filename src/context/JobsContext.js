@@ -24,6 +24,13 @@ export const JobsProvider = ({children}) => {
   // delete func
   const handleDelete = (selectedItem) => {
     setJobs(jobs.filter((item) => item.id !== selectedItem.id));
+    const data = LocalStorageCheck();
+    data.forEach((item, index) => {
+      if (item.id === selectedItem.id) {
+        data.splice(index, 1);
+        localStorage.setItem('jobs', JSON.stringify(data));
+      }
+    });
     setOpenDeleteModal(!openDeleteModal);
   };
 
@@ -38,11 +45,11 @@ export const JobsProvider = ({children}) => {
 
   //edit done
   const handleEditSave = () => {
-    setSelectedItem({...selectedItem, jobPriority: selectedItem.newPrio});
     handleOpenEditModal();
+    setSelectedItem({...selectedItem, jobPriority: selectedItem.newPrio});
 
     setJobs(
-      jobs.map(function (item) {
+      jobs.map((item) => {
         if (item.id === selectedItem.id) {
           item.jobPriority = selectedItem.newPrio;
         }
